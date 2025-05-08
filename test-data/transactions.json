@@ -1,0 +1,89 @@
+[
+    {
+        "id": "VR-25-213456",
+        "type": "purchase",
+        "date": "2025-03-15T12:00:00Z",
+        "categories": [
+            {
+                "code": "au",
+                "name": "Gold",
+                "totalValue": { "value": 52734.0, "currency": "EUR" },
+                "stockValueItems": [
+                    {
+                        "form": "5g Bars",
+                        "purity": "Au min 99.9%",
+                        "quantity": { "value": 500, "unit": "g" },
+                        "value": { "value": 698.77, "currency": "EUR" }
+                    },
+                    {
+                        "form": "2g Bars",
+                        "purity": "Au min 99.9%",
+                        "quantity": { "value": 200, "unit": "g" },
+                        "value": { "value": 279.5, "currency": "EUR" }
+                    },
+                    {
+                        "form": "Granules",
+                        "purity": "Au min 99.9%",
+                        "quantity": { "value": 100, "unit": "g" },
+                        "value": { "value": 139.75, "currency": "EUR" }
+                    }
+                ]
+            },
+            {
+                "code": "ag",
+                "name": "Silver",
+                "totalValue": { "value": 1118.02, "currency": "EUR" },
+                "stockValueItems": [
+                    {
+                        "form": "5g Bars",
+                        "purity": "Ag min 99.9%",
+                        "quantity": { "value": 500, "unit": "g" },
+                        "value": { "value": 698.77, "currency": "EUR" }
+                    },
+                    {
+                        "form": "2g Bars",
+                        "purity": "Ag min 99.9%",
+                        "quantity": { "value": 200, "unit": "g" },
+                        "value": { "value": 279.5, "currency": "EUR" }
+                    },
+                    {
+                        "form": "Granules",
+                        "purity": "Ag min 99.9%",
+                        "quantity": { "value": 100, "unit": "g" },
+                        "value": { "value": 139.75, "currency": "EUR" }
+                    }
+                ]
+            },
+            {
+                "code": "ir",
+                "name": "Iridium",
+                "totalValue": { "value": 1118.02, "currency": "EUR" },
+                "stockValueItems": [
+                    {
+                        "form": "Granules",
+                        "purity": "Ir min 99.9%",
+                        "quantity": { "value": 100, "unit": "g" },
+                        "value": { "value": 139.75, "currency": "EUR" }
+                    }
+                ]
+            },
+            {
+                "code": "pt",
+                "name": "Platin",
+                "totalValue": { "value": 6026.0, "currency": "EUR" },
+                "stockValueItems": [
+                    {
+                        "form": "5g Bars",
+                        "purity": "Pt min 99.9%",
+                        "quantity": { "value": 500, "unit": "g" },
+                        "value": { "value": 698.77, "currency": "EUR" }
+                    }
+                ]
+            }
+        ],
+        "totalValue": {
+            "value": 53800.23,
+            "currency": "EUR"
+        }
+    }
+]
