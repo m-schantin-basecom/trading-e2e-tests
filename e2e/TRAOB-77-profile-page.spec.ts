@@ -1,8 +1,10 @@
 import { expect, test } from "@playwright/test";
+import { NavigationDrawer } from "../pages/e2e/NavigationDrawer";
 import { prepare } from "../utils/helper-functions";
 import customers from "../test-data/customers.json";
 
 let describeName = "TRAOB-77";
+let navigationDrawer: NavigationDrawer;
 
 test.describe.serial(
     describeName,
@@ -17,6 +19,8 @@ test.describe.serial(
         [{ customerType: "B2C" }, { customerType: "B2B" }].forEach((testSpec, index) => {
             test(`Verify that the personal data is displayed (${testSpec.customerType})`, async ({ page }) => {
                 await prepare(page, testSpec, index, customers);
+                navigationDrawer = new NavigationDrawer(page);
+                await navigationDrawer.profile();
                 await expect(page.getByText(customers[index].firstName).first()).toBeVisible();
                 await expect(page.getByText(customers[index].lastName).first()).toBeVisible();
                 await expect(page.getByText(customers[index].email)).toBeVisible();
@@ -30,6 +34,8 @@ test.describe.serial(
         [{ customerType: "B2C" }, { customerType: "B2B" }].forEach((testSpec, index) => {
             test(`Verify that the address is displayed (${testSpec.customerType})`, async ({ page }) => {
                 await prepare(page, testSpec, index, customers);
+                navigationDrawer = new NavigationDrawer(page);
+                await navigationDrawer.profile();
                 await page.getByRole("tab", { name: "Address" }).click();
                 await expect(page.getByRole("main")).toContainText(customers[index].company);
                 await expect(page.getByRole("main")).toContainText(customers[index].street);

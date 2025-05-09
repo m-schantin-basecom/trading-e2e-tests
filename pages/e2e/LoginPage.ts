@@ -17,7 +17,9 @@ export class LoginPage {
 
     async loginUser(username: string, password: string) {
         await this.emailInput.waitFor({ state: "visible" });
+        await this.page.waitForTimeout(500);
         await this.emailInput.fill(username);
+        await this.page.waitForTimeout(500);
         await this.continueButton.click();
         await this.page.getByRole("button", { name: "Enter your password associated with your account" }).click();
         await this.passwordInput.fill(password);

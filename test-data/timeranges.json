@@ -1,0 +1,25 @@
+{
+    "timeranges": [
+        {
+            "value": "Last month"
+        },
+        {
+            "value": "Last 3 months"
+        },
+        {
+            "value": "Last 6 months"
+        },
+        {
+            "value": "Last 12 months"
+        },
+        {
+            "value": "Current year"
+        },
+        {
+            "value": "Last year"
+        },
+        {
+            "value": "All time"
+        }
+    ]
+}
