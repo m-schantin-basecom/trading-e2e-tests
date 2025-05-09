@@ -1,0 +1,32 @@
+[
+    {
+        "customerType": "B2C",
+        "email": "nedoja5707@mobilesm.com",
+        "firstName": "John",
+        "lastName": "Doe",
+        "phoneNumber1": "1234567890",
+        "phoneNumber2": "123123123",
+        "customerNumber": "12341234",
+        "company": "John Doe",
+        "street": "Platz der Republik 1",
+        "postalCode": "11011",
+        "city": "Berlin",
+        "addition": "Line 1 Line 2",
+        "country": "DE"
+    },
+    {
+        "customerType": "B2B",
+        "email": "joyoti4803@mobilesm.com",
+        "firstName": "B2B3",
+        "lastName": "Test",
+        "phoneNumber1": "1234567890",
+        "phoneNumber2": "123123123123",
+        "customerNumber": "98769876",
+        "company": "Tradium Test Company Headquarter",
+        "street": "Street 1",
+        "postalCode": "46619",
+        "city": "Berlin",
+        "addition": "",
+        "country": "DE"
+    }
+]

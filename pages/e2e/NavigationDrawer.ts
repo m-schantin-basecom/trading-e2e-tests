@@ -4,6 +4,7 @@ export class NavigationDrawer {
     readonly page: Page;
 
     readonly documentsLink: Locator;
+    readonly logoutLink: Locator;
     readonly portfolioLink: Locator;
     readonly profileLink: Locator;
     readonly transactionsLink: Locator;
@@ -12,6 +13,7 @@ export class NavigationDrawer {
         this.page = page;
 
         this.documentsLink = page.getByRole("link", { name: "Documents" });
+        this.logoutLink = page.getByRole("link", { name: "Logout" });
         this.portfolioLink = page.getByRole("link", { name: "Portfolio" });
         this.profileLink = page.getByRole("link", { name: "Profile" });
         this.transactionsLink = page.getByRole("link", { name: "Transactions" });
@@ -21,6 +23,10 @@ export class NavigationDrawer {
         await this.documentsLink.click();
     }
 
+    async logout() {
+        await this.logoutLink.click();
+    }
+    
     async portfolio() {
         await this.portfolioLink.click();
     }
@@ -32,4 +38,5 @@ export class NavigationDrawer {
     async transactions() {
         await this.transactionsLink.click();
     }
+
 }

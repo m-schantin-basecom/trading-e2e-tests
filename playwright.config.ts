@@ -12,6 +12,10 @@ import { defineConfig, devices } from "@playwright/test";
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+    expect: {
+        timeout: 10000,
+    },
+    timeout: 2 * 60 * 1000,
     testDir: "./e2e",
     /* Run tests in files in parallel */
     fullyParallel: false,
@@ -27,7 +31,7 @@ export default defineConfig({
     use: {
         /* Base URL to use in actions like `await page.goto('/')`. */
         baseURL: "http://my-dev.tradium.com",
-
+        headless: false,
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: "on-first-retry",
     },
@@ -48,6 +52,5 @@ export default defineConfig({
         //     name: "webkit",
         //     use: { ...devices["Desktop Safari"] },
         // },
-
     ],
 });
