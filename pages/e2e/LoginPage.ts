@@ -5,24 +5,37 @@ export class LoginPage {
 
     readonly continueButton: Locator;
     readonly emailInput: Locator;
+    readonly logoutLink: Locator;
     readonly passwordInput: Locator;
+    readonly signInWithPasswordButton: Locator;
 
     constructor(page: Page) {
         this.page = page;
 
         this.continueButton = page.getByRole("button", { name: "Continue" });
         this.emailInput = page.getByTestId("ory/form/node/input/identifier");
+        this.logoutLink = page.getByTestId("ory/screen/login/action/logout");
         this.passwordInput = page.getByTestId("ory/form/node/input/password");
+        this.signInWithPasswordButton = page.getByRole("button", { name: "Sign in with password" });
+    }
+
+    async continue() {
+        await this.continueButton.click();
     }
 
     async loginUser(username: string, password: string) {
         await this.emailInput.waitFor({ state: "visible" });
-        await this.page.waitForTimeout(500);
         await this.emailInput.fill(username);
-        await this.page.waitForTimeout(500);
-        await this.continueButton.click();
-        await this.page.getByRole("button", { name: "Enter your password associated with your account" }).click();
+        await this.continue();
         await this.passwordInput.fill(password);
-        await this.page.getByRole("button", { name: "Sign in with password" }).click();
+        await this.signInWithPassword();
+    }
+
+    async logout() {
+        await this.logoutLink.click();
+    }
+
+    async signInWithPassword() {
+        await this.signInWithPasswordButton.click();
     }
 }
