@@ -4,7 +4,7 @@ import { LoginPage } from "../pages/e2e/LoginPage";
 let loginPage: LoginPage;
 
 /**
- * Logs either a B2C or a B2B customer in and opens the profile page
+ * Logs either a B2C or a B2B customer in
  * @param page The page
  * @param testSpec The testSpec
  * @param index The index

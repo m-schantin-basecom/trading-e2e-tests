@@ -5,7 +5,7 @@ import { prepare } from "../utils/helper-functions";
 import { ProfilePage } from "../pages/e2e/ProfilePage";
 import customers from "../test-data/customers.json";
 
-let describeName = "TRAOB-77";
+let describeName = "TRAOB-29";
 let loginPage: LoginPage;
 let navigationDrawer: NavigationDrawer;
 let page: Page;
@@ -17,7 +17,7 @@ let profilePage: ProfilePage;
         {
             annotation: {
                 type: "story",
-                description: "https://basecom-gmbh.atlassian.net/browse/TRAOB-77",
+                description: "https://basecom-gmbh.atlassian.net/browse/TRAOB-29",
             },
             tag: "@dev",
         },

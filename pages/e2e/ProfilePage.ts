@@ -1,5 +1,7 @@
 import { expect, Locator, Page } from "playwright/test";
 
+const company: string = "Company"
+
 export class ProfilePage {
     readonly page: Page;
 
@@ -24,9 +26,11 @@ export class ProfilePage {
 
     async verifyThatTheCompanyAndCompanyAddressIsOnlyDisplayedInTheB2BCase(testSpec: any, page: Page, customers: any, index: number, addressPage: boolean) {
         if (testSpec.customerType === "B2B") {
+            await expect(page.getByRole("main")).toContainText(company);
             await expect(page.getByRole("main")).toContainText(customers[index].company);
             if (addressPage) await expect(page.getByRole("main")).toContainText(customers[index].companyAddress);
         } else {
+            await expect(page.getByRole("main")).not.toContainText(company);
             await expect(page.getByRole("main")).not.toContainText(customers[index].company, { timeout: 2500 });
             if (addressPage) await expect(page.getByRole("main")).not.toContainText(customers[index].companyAddress, { timeout: 2500 });
         }
