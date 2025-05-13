@@ -30,7 +30,7 @@ export class ProfilePage {
             await expect(page.getByRole("main")).toContainText(customers[index].company);
             if (addressPage) await expect(page.getByRole("main")).toContainText(customers[index].companyAddress);
         } else {
-            await expect(page.getByRole("main")).not.toContainText(company);
+            await expect(page.getByRole("main")).not.toContainText(company, { timeout: 2500 });
             await expect(page.getByRole("main")).not.toContainText(customers[index].company, { timeout: 2500 });
             if (addressPage) await expect(page.getByRole("main")).not.toContainText(customers[index].companyAddress, { timeout: 2500 });
         }

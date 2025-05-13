@@ -41,10 +41,15 @@ let profilePage: ProfilePage;
             test(`Verify that the personal data is displayed (${testSpec.customerType})`, async () => {
                 await profilePage.verifyHeader(page, customers, index);
                 await profilePage.verifyThatTheCompanyAndCompanyAddressIsOnlyDisplayedInTheB2BCase(testSpec, page, customers, index, false);
+                await expect(page.getByText("First Name").first()).toBeVisible();
                 await expect(page.getByText(customers[index].firstName).first()).toBeVisible();
+                await expect(page.getByText("Last Name").first()).toBeVisible();
                 await expect(page.getByText(customers[index].lastName).first()).toBeVisible();
+                await expect(page.getByText("E-mail Address").first()).toBeVisible();
                 await expect(page.getByText(customers[index].email)).toBeVisible();
+                await expect(page.getByText("Phone Number 1").first()).toBeVisible();
                 await expect(page.getByText(customers[index].phoneNumber1)).toBeVisible();
+                await expect(page.getByText("Phone Number 2").first()).toBeVisible();
                 await expect(page.getByText(customers[index].phoneNumber2)).toBeVisible();
             });
 
@@ -52,10 +57,15 @@ let profilePage: ProfilePage;
                 await profilePage.address();
                 await profilePage.verifyHeader(page, customers, index);
                 await profilePage.verifyThatTheCompanyAndCompanyAddressIsOnlyDisplayedInTheB2BCase(testSpec, page, customers, index, true);
+                await expect(page.getByText("Street").first()).toBeVisible();
                 await expect(page.getByRole("main")).toContainText(customers[index].street);
+                await expect(page.getByText("Postal Code").first()).toBeVisible();
                 await expect(page.getByRole("main")).toContainText(customers[index].postalCode);
+                await expect(page.getByText("City").first()).toBeVisible();
                 await expect(page.getByRole("main")).toContainText(customers[index].city);
+                await expect(page.getByText("Addition").first()).toBeVisible();
                 await expect(page.getByRole("main")).toContainText(customers[index].addition);
+                await expect(page.getByText("Country").first()).toBeVisible();
                 await expect(page.getByRole("main")).toContainText(customers[index].country);
             });
         }
